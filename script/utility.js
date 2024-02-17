@@ -8,3 +8,30 @@ function showElementById(elementId){
     const element =document.getElementById(elementId);
     element.classList.remove('hidden');
 }
+//    set a background color function
+function setBackgroundColorById(elementId){
+    const element =document.getElementById(elementId);
+    element.classList.add('bg-amber-400');
+}
+
+//    remove a background color function
+function removeBackgroundColorById(elementId){
+    const element =document.getElementById(elementId);
+    element.classList.remove('bg-amber-400');
+}
+
+function getRandomAlphabet(){
+    // create and get an alphabet array.
+    const alphabetString ='abcdefghijklmnopqrstuvwxyz';
+    const alphabets =alphabetString.split('');
+    // console.log(alphabets);
+
+    // get a random index between 0-25
+    const randomNumber = Math.random()*25;
+    const index = Math.round(randomNumber);
+    // console.log(index);
+
+    const alphabet = alphabets[index];
+    return alphabet;
+}
+
