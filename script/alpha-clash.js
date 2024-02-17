@@ -33,10 +33,11 @@ function handleKeyboardButtonPress(event){
 
             // step-3: show the updated score
             pointScore.innerText= updatedScore;
-
+            
         // start a new round
         removeBackgroundColorById(expectedAlphabet);
         continueGame();
+        return updatedScore;
     }
     else{
         console.log('you lost you life');
@@ -48,6 +49,17 @@ function handleKeyboardButtonPress(event){
         const updatedLifeScore =numberLifeScore - 1;
         // step-3: display the updated life count 
         lifeScore.innerText =updatedLifeScore;
+
+        // if life 0 then game over
+        if(updatedLifeScore == 0){
+           gameover()
+         
+        }
+        // show final score with the game over
+        const gameScore =document.getElementById('game-score');
+        console.log('14 ke paici');
+       gameScore.innerText = updatedScore;
+        
     }
 }
 document.addEventListener('keyup',handleKeyboardButtonPress)
@@ -75,3 +87,20 @@ function play(){
     continueGame()
 }
 
+function gameover(){
+    hideElementById('play-ground');
+    showElementById('final-score');
+
+    
+}
+function playAgain(){
+    hideElementById('final-score');
+    showElementById('home-screen');
+    
+}
+
+
+    //  const gameScore =document.getElementById('game-score');
+    //  console.log('14 ke paici');
+    //  const gameScoreText =gameScore.innerText;
+    //  gameScoreText =updatedScore;
