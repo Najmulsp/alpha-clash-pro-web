@@ -20,6 +20,10 @@ function removeBackgroundColorById(elementId){
     element.classList.remove('bg-amber-400');
 }
 
+function getElementTextById(elementId){
+    const element =document.getElementById(elementId);
+    const text = element.innerText;
+}
 function getRandomAlphabet(){
     // create and get an alphabet array.
     const alphabetString ='abcdefghijklmnopqrstuvwxyz';
@@ -35,3 +39,7 @@ function getRandomAlphabet(){
     return alphabet;
 }
 
+function setTextElementValueById(elementId, value){
+    const element = document.getElementById(elementId);
+    element.innerText=value;
+}

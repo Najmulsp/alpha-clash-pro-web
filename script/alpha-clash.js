@@ -30,7 +30,7 @@ function handleKeyboardButtonPress(event){
 
             // step-2: increase the score by 1
             const updatedScore =numberPointScore + 1;
-
+            
             // step-3: show the updated score
             pointScore.innerText= updatedScore;
             
@@ -56,9 +56,9 @@ function handleKeyboardButtonPress(event){
          
         }
         // show final score with the game over
-        const gameScore =document.getElementById('game-score');
-        console.log('14 ke paici');
-       gameScore.innerText = updatedScore;
+    //     const gameScore =document.getElementById('point-score');
+    //     console.log('14 ke paici');
+    //    gameScore.innerText = updatedScore;
         
     }
 }
@@ -84,6 +84,8 @@ setBackgroundColorById(alphabet);
 function play(){
     hideElementById('home-screen');
     showElementById('play-ground');
+    setTextElementValueById('life-score',5);
+    setTextElementValueById('point-score',0);
     continueGame()
 }
 
@@ -91,12 +93,22 @@ function gameover(){
     hideElementById('play-ground');
     showElementById('final-score');
 
+    // setTextElementValueById('game-score',updatedScore);
+    // const grandScore =document.getElementById('game-score');
+    // const grandScore.innerText =lastScore;
+    // console.log(lastScore);
+    // const lastScore =updatedScore;
     
+
+    // clear the last selected alphabet highlight
+    const currentAlphabet = getElementTextById('current-alphabet');
+    removeBackgroundColorById('current-alphabet');
 }
 function playAgain(){
     hideElementById('final-score');
     showElementById('home-screen');
-    
+
+   
 }
 
 
